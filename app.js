@@ -54,7 +54,19 @@
 // 4. Fourth problem
 
 function findAddress(obj){
-    
+    const street = obj.street;
+    const house = obj.house;
+    const society = obj.society;
+    if(house == null && society == null){
+        return (street+","+ "__" +","+"__");
+    }
+    else if(house == null){
+        return (street +","+ "__" +","+society);
+    }
+    return (street +","+ house +","+society);
 }
+
+console.log(findAddress({ street: "10",house: "15A", society: "Earth Perfect"}))
+
 
 
